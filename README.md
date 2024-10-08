@@ -1,6 +1,6 @@
 # React Toggle Slider Switch
 
-A customizable React toggle slider switch component. Simple to use with built-in label functionality and customization options.
+A customizable react toggle slider switch component. Simple to use with built-in label functionality and customization options.
 
 # Installation
 
@@ -58,15 +58,55 @@ export default BasicExample;
 
 ```
 
+# Label Example 
+
+Here’s an example with label using a functional component with the `ReactToggleSliderSwitch`:
+
+**Copy code**:
+
+```javascript
+import React, { useState } from "react";
+import ReactToggleSliderSwitch from "react-toggle-switch";
+
+interface LabelExampleProps {
+ 
+}
+
+const LabelExample: React.FC<LabelExampleProps> = () => {
+  const [checked, setChecked] = useState<boolean>(initialChecked);
+
+  const handleChange = (newChecked: boolean): void => {
+    setChecked(newChecked);
+  };
+
+  return (
+    <ReactToggleSliderSwitch
+      label={"Label"}
+      checked={checked}
+      onChange={handleChange}
+      onColor="#22c55e"
+      offColor="#d1d5db"
+      handleDiameter={28}
+      height={28}
+      width={70}
+    />
+  );
+};
+
+export default LabelExampleProps;
+
+```
+
+
 # Features
 
-Customizable colors: Change the on and off switch colors.
+Customizable colors : Change the on and off switch colors.
 
-Built-in label support: Automatically handles labels if you need one.
+Built-in label support : Automatically handles labels if you need one.
 
-Drag & Click Behavior: You can click or drag to toggle the switch.
+Drag & Click Behavior : You can click or drag to toggle the switch.
 
-Custom icons: Supports custom icons for both checked and unchecked states.
+Custom icons : Supports custom icons for both checked and unchecked states.
 
 # Props
 
@@ -82,14 +122,14 @@ Custom icons: Supports custom icons for both checked and unchecked states.
 | `outline`              | `boolean`                                  | `undefined`            | Specifies if the handle should have an outline when focused.                                          |
 | `handleWidth`          | `number`                                   | `35`                   | The width of the handle, measured in pixels.                                                          |
 | `label`                | `string`                                   | `undefined`            | The label to display alongside the switch.                                                            |
-| `labelPosition`        | `"before" || "after"`                       | `"after"`              | Position of the label if the label is defined.                                                        |
+| `labelPosition`        | `"before" \| "after"`                      | `"after"`              | Position of the label if the label is defined.                                                        |
 | `labelStyle`           | `React.CSSProperties`                      | `undefined`            | Custom styles for the label (e.g., fontSize, color, etc.).                                            |
 | `handleDiameter`       | `number`                                   | `undefined`            | Diameter of the handle, measured in pixels.                                                           |
 | `uncheckedHandleIcon`  | `JSX.Element`                              | `undefined`            | Custom icon to display on the handle when the switch is not checked.                                  |
 | `checkedHandleIcon`    | `JSX.Element`                              | `undefined`            | Custom icon to display on the handle when the switch is checked.                                      |
-| `uncheckedIcon`        | `boolean || JSX.Element`                    | `defaultUncheckedIcon` | Icon that will be shown when the switch is not checked. Set to false to show no icon.                 |
-| `checkedIcon`          | `boolean || JSX.Element`                    | `defaultCheckedIcon`   | Icon that will be shown when the switch is checked. Set to false to show no icon.                     |
-| `boxShadow`            | `string || null`                            | `undefined`            | Box-shadow of the handle of the switch.                                                               |
+| `uncheckedIcon`        | `boolean \| JSX.Element`                   | `defaultUncheckedIcon` | Icon that will be shown when the switch is not checked. Set to false to show no icon.                 |
+| `checkedIcon`          | `boolean \| JSX.Element`                   | `defaultCheckedIcon`   | Icon that will be shown when the switch is checked. Set to false to show no icon.                     |
+| `boxShadow`            | `string \| null`                           | `undefined`            | Box-shadow of the handle of the switch.                                                               |
 | `activeBoxShadow`      | `string`                                   | `"0px 0px 2px 2px #3bf"` | Box-shadow of the handle when focused or active.                                                      |
 | `height`               | `number`                                   | `28`                   | Height of the switch background in pixels.                                                            |
 | `width`                | `number`                                   | `70`                   | Width of the switch background in pixels.                                                             |
@@ -109,15 +149,24 @@ Custom icons: Supports custom icons for both checked and unchecked states.
 You're welcome to contribute to react-toggle-switch. Keep in mind that big changes have to be thoroughly tested on different browsers and devices before they can be merged.
 
 To set up the project:
+
 Fork and clone the repository
+
 Install dependencies:
-bash
-Copy code
+
+```bash
+
 npm install
+
+```
+
 Run the development server:
-bash
-Copy code
+
+```bash
+
 npm run dev
+
+```
 
 # License
 
