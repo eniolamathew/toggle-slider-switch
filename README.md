@@ -15,7 +15,6 @@ To install the package, run:
 ```bash
 npm install react-toggle-switch
 
-
 yarn add react-toggle-switch
 
 ```
@@ -54,7 +53,7 @@ const BasicExample: React.FC<BasicExampleProps> = () => {
   );
 };
 
-export default SwitchExample;
+export default BasicExample;
 
 ```
 
