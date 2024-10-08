@@ -17,8 +17,8 @@ npm install react-toggle-switch
 
 Here’s a basic example using a functional component with the ReactToggleSliderSwitch:
 
-javascript
-Copy code
+# javascript
+# Copy code
 import React, { useState } from "react";
 import ReactToggleSliderSwitch from "react-toggle-switch";
 
@@ -99,6 +99,6 @@ bash
 Copy code
 npm run dev
 
-License
+# License
 
 This project is licensed under the MIT License.
