@@ -1,4 +1,5 @@
 # Toggle-slider-switch
+
 A draggable toggle-slider-switch component for React.
 
 # React Toggle Slider Switch
@@ -14,11 +15,9 @@ To install the package, run:
 ```bash
 npm install react-toggle-switch
 
-
 yarn add react-toggle-switch
 
 ```
-
 
 # Basic Usage
 
@@ -30,11 +29,15 @@ Here’s a basic example using a functional component with the `ReactToggleSlide
 import React, { useState } from "react";
 import ReactToggleSliderSwitch from "react-toggle-switch";
 
-const SwitchExample = () => {
-  const [checked, setChecked] = useState(false);
+interface BasicExampleProps {
+ 
+}
 
-  const handleChange = (checked) => {
-    setChecked(checked);
+const BasicExample: React.FC<BasicExampleProps> = () => {
+  const [checked, setChecked] = useState<boolean>(initialChecked);
+
+  const handleChange = (newChecked: boolean): void => {
+    setChecked(newChecked);
   };
 
   return (
@@ -50,14 +53,18 @@ const SwitchExample = () => {
   );
 };
 
-export default SwitchExample;
+export default BasicExample;
 
+```
 
 # Features
 
 Customizable colors: Change the on and off switch colors.
+
 Built-in label support: Automatically handles labels if you need one.
+
 Drag & Click Behavior: You can click or drag to toggle the switch.
+
 Custom icons: Supports custom icons for both checked and unchecked states.
 
 # Props
