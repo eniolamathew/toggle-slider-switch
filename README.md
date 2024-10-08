@@ -1,7 +1,3 @@
-# Toggle-slider-switch
-
-A draggable toggle-slider-switch component for React.
-
 # React Toggle Slider Switch
 
 A customizable React toggle slider switch component. Simple to use with built-in label functionality and customization options.
@@ -13,7 +9,12 @@ To install the package, run:
 **Using npm**:
 
 ```bash
+
 npm install react-toggle-switch
+
+```
+
+```bash
 
 yarn add react-toggle-switch
 
@@ -81,14 +82,14 @@ Custom icons: Supports custom icons for both checked and unchecked states.
 | `outline`              | `boolean`                                  | `undefined`            | Specifies if the handle should have an outline when focused.                                          |
 | `handleWidth`          | `number`                                   | `35`                   | The width of the handle, measured in pixels.                                                          |
 | `label`                | `string`                                   | `undefined`            | The label to display alongside the switch.                                                            |
-| `labelPosition`        | `"before" | "after"`                       | `"after"`              | Position of the label if the label is defined.                                                        |
+| `labelPosition`        | `"before" || "after"`                       | `"after"`              | Position of the label if the label is defined.                                                        |
 | `labelStyle`           | `React.CSSProperties`                      | `undefined`            | Custom styles for the label (e.g., fontSize, color, etc.).                                            |
 | `handleDiameter`       | `number`                                   | `undefined`            | Diameter of the handle, measured in pixels.                                                           |
 | `uncheckedHandleIcon`  | `JSX.Element`                              | `undefined`            | Custom icon to display on the handle when the switch is not checked.                                  |
 | `checkedHandleIcon`    | `JSX.Element`                              | `undefined`            | Custom icon to display on the handle when the switch is checked.                                      |
-| `uncheckedIcon`        | `boolean | JSX.Element`                    | `defaultUncheckedIcon` | Icon that will be shown when the switch is not checked. Set to false to show no icon.                 |
-| `checkedIcon`          | `boolean | JSX.Element`                    | `defaultCheckedIcon`   | Icon that will be shown when the switch is checked. Set to false to show no icon.                     |
-| `boxShadow`            | `string | null`                            | `undefined`            | Box-shadow of the handle of the switch.                                                               |
+| `uncheckedIcon`        | `boolean || JSX.Element`                    | `defaultUncheckedIcon` | Icon that will be shown when the switch is not checked. Set to false to show no icon.                 |
+| `checkedIcon`          | `boolean || JSX.Element`                    | `defaultCheckedIcon`   | Icon that will be shown when the switch is checked. Set to false to show no icon.                     |
+| `boxShadow`            | `string || null`                            | `undefined`            | Box-shadow of the handle of the switch.                                                               |
 | `activeBoxShadow`      | `string`                                   | `"0px 0px 2px 2px #3bf"` | Box-shadow of the handle when focused or active.                                                      |
 | `height`               | `number`                                   | `28`                   | Height of the switch background in pixels.                                                            |
 | `width`                | `number`                                   | `70`                   | Width of the switch background in pixels.                                                             |
