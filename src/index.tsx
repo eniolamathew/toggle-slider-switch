@@ -124,22 +124,26 @@ const ReactToggleSliderSwitch: React.FC<ReactToggleSliderSwitchProps> = ({
   const onDragStop = useCallback(
     (event: MouseEvent | TouchEvent) => {
       const halfwayCheckpoint = ($checkedPos + $uncheckedPos) / 2;
-  
       const prevPos = checked ? $checkedPos : $uncheckedPos;
       setPos(prevPos);
   
-      const isDraggedHalfway = (checked && pos <= halfwayCheckpoint) || (!checked && pos >= halfwayCheckpoint);
+      const timeSinceStart = dragStartingTime ? Date.now() - dragStartingTime : 0;
+      const isSimulatedClick = !isDragging || timeSinceStart < 250;
   
-      if (isDraggedHalfway) {
-        onChange(!checked, event, id);
+      const isDraggedHalfway = checked
+        ? pos <= halfwayCheckpoint 
+        : pos >= halfwayCheckpoint; 
+  
+      if (isSimulatedClick || isDraggedHalfway) {
+        onChange(!checked, event, id);  
       }
   
       setIsDragging(false);
       setHasOutline(false);
       lastDragAtRef.current = Date.now();
     },
-    [checked, $checkedPos, $uncheckedPos, isDragging, pos, onChange, id]
-  );  
+    [checked, $checkedPos, $uncheckedPos, dragStartingTime, isDragging, pos, onChange, id]
+  );
 
   const handleMouseMove = useCallback(
     (event: MouseEvent) => {

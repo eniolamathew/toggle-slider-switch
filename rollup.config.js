@@ -4,6 +4,7 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import { clear } from 'console';
 
 const packageJson = require('./package.json');
 
@@ -32,6 +33,7 @@ export default {
       babelHelpers: 'bundled',
     }),
     terser(),
-  ],
+    ],
   external: Object.keys(packageJson.peerDependencies || {}),
+  
 };

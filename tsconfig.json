@@ -1,34 +1,37 @@
 {
   "compilerOptions": {
-    "target": "es2016",                                 
-    "module": "ES2020",                               
-    "allowJs": true,              
-    "checkJs": true,                                  
-    "maxNodeModuleJsDepth": 1,                        
-    "esModuleInterop": true,                             
-    "forceConsistentCasingInFileNames": true,           
-    "strict": true,                                     
+    "target": "es2016",
+    "module": "ES2020",
+    "allowJs": true,
+    "checkJs": true,
+    "maxNodeModuleJsDepth": 1,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "skipLibCheck": true,
-
-    // Add support for JSX with React
-    "jsx": "react-jsx",                
-    "jsxImportSource": "react",        
-    "moduleResolution": "node",        
-    "resolveJsonModule": true,         
-    
-    // Paths configuration (if needed)
-    "baseUrl": ".",                    
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@utils/*": ["src/utils/*"]
-    }
+      "@utils/*": ["src/utils/*"],
+      "toggle-slider-switch": ["../toggle-slider-switch/dist"]
+    },
+    
+    "outDir": "dist",              
+    "declaration": true,          
+    "declarationDir": "dist",     
+    "declarationMap": true       
   },
   "include": [
-    "src/**/*",                        
-    "types/**/*"
+    "src/**/*",
+    "types/**/*",
+    "../toggle-slider-switch/src/**/*"
   ],
   "exclude": [
-    "node_modules",                     
-    "dist"                          
+    "node_modules",
+    "dist"
   ]
 }

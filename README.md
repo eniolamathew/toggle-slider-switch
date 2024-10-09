@@ -26,16 +26,12 @@ Here’s a basic example using a functional component with the `ReactToggleSlide
 
 **Copy code**:
 
-```javascript
+```typescript
 import React, { useState } from "react";
-import ReactToggleSliderSwitch from "react-toggle-switch";
+import ReactToggleSliderSwitch from "react-toggle-slider-switch";
 
-interface BasicExampleProps {
- 
-}
-
-const BasicExample: React.FC<BasicExampleProps> = () => {
-  const [checked, setChecked] = useState<boolean>(initialChecked);
+const BasicExample: React.FC = () => {
+  const [checked, setChecked] = useState<boolean>(false);
 
   const handleChange = (newChecked: boolean): void => {
     setChecked(newChecked);
@@ -60,20 +56,16 @@ export default BasicExample;
 
 # Label Example 
 
-Here’s an example with label using a functional component with the `ReactToggleSliderSwitch`:
+Here’s a custom example with additional styles, using the `ReactToggleSliderSwitch` component:
 
 **Copy code**:
 
-```javascript
-import React, { useState } from "react";
-import ReactToggleSliderSwitch from "react-toggle-switch";
+```typescript
 
-interface LabelExampleProps {
- 
-}
+import React from "react";
+import ReactToggleSliderSwitch from "react-toggle-slider-switch";
 
-const LabelExample: React.FC<LabelExampleProps> = () => {
-  const [checked, setChecked] = useState<boolean>(initialChecked);
+const LabelExample: React.FC = () => {
 
   const handleChange = (newChecked: boolean): void => {
     setChecked(newChecked);
@@ -81,7 +73,7 @@ const LabelExample: React.FC<LabelExampleProps> = () => {
 
   return (
     <ReactToggleSliderSwitch
-      label={"Label"}
+      label="Label"
       checked={checked}
       onChange={handleChange}
       onColor="#22c55e"
@@ -93,10 +85,50 @@ const LabelExample: React.FC<LabelExampleProps> = () => {
   );
 };
 
-export default LabelExampleProps;
+export default LabelExample;
 
 ```
 
+# Custom Example 
+
+Here’s an custom example with label using a functional component with the `ReactToggleSliderSwitch`:
+
+**Copy code**:
+
+```typescript
+
+import React from "react";
+import ReactToggleSliderSwitch from "react-toggle-slider-switch";
+
+const CustomExample: React.FC = () => {
+  const [checked, setChecked] = useState<boolean>(initialChecked);
+
+  const handleChange = (newChecked: boolean): void => {
+    setChecked(newChecked);
+  };
+
+  return (
+    <ReactToggleSliderSwitch
+      label="Custom Label"
+      checked={isChecked}
+      onChange={handleChange}
+      onColor="#0f0"
+      offColor="#f00"
+      handleDiameter={28}
+      height={28}
+      width={70}
+      switchBgClassName="custom-bg-class"
+      switchHandleClassName="custom-handle-class"
+      checkedIconStyle={{ color: "blue" }}
+      uncheckedIconStyle={{ color: "red" }}
+      labelStyle={{ fontWeight: "bold", fontSize: "14px" }}
+    />
+  );
+};
+
+export default CustomExample;
+
+```
 
 # Features
 
