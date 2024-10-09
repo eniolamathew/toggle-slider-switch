@@ -14,6 +14,8 @@ npm install react-toggle-slider-switch
 
 ```
 
+**Using yarn**:
+
 ```bash
 
 yarn add react-toggle-slider-switch
