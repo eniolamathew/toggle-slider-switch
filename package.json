@@ -1,10 +1,27 @@
 {
   "name": "react-toggle-slider-switch",
   "version": "1.0.0",
-  "description": "A React toggle slider switch component",
+  "description": "A customizable React toggle slider switch component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "keywords": [                          
+    "react",
+    "toggle",
+    "switch",
+    "slider",
+    "component"
+  ],
+  "repository": {                         
+    "type": "git",
+    "url": "https://github.com/eniolamathew/toggle-slider-switch.git"
+  },
+  "author": "Eniola Mathew Ogundipe",                 
+  "license": "MIT",                       
+  "files": [                              
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "rollup -c",
     "postbuild": "cpx 'dist/src/**/*.d.ts' dist/ && rm -rf dist/src",
@@ -16,6 +33,10 @@
   "dependencies": {
     "prop-types": "^15.8.1"
   },
+  "peerDependencies": {
+  "react": "^16.0.0 || ^17.0.0 || ^18.0.0",
+  "react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0"
+ },
   "devDependencies": {
     "@babel/core": "^7.25.7",
     "@babel/preset-env": "^7.25.7",
