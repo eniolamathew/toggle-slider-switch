@@ -19,14 +19,9 @@ npm install react-toggle-slider-switch
 yarn add react-toggle-slider-switch
 
 ```
+# Screenshot
 
-![Off Screenshot](./images/off.png)
-
-![On Screenshot](./images/on.png)
-
-![Custom Off Screenshot](./images/customoff.png)
-
-![Custom On Screenshot](./images/customOn.png)
+![Screenshot](./images/screenshot.jpeg)
 
 # Basic Usage
 
