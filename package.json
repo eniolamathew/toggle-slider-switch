@@ -1,5 +1,5 @@
 {
-  "name": "toggle-slider-switch",
+  "name": "react-toggle-slider-switch",
   "version": "1.0.0",
   "description": "A React toggle slider switch component",
   "main": "dist/index.cjs.js",

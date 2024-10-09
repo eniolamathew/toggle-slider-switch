@@ -10,15 +10,23 @@ To install the package, run:
 
 ```bash
 
-npm install react-toggle-switch
+npm install react-toggle-slider-switch
 
 ```
 
 ```bash
 
-yarn add react-toggle-switch
+yarn add react-toggle-slider-switch
 
 ```
+
+![Off Screenshot](./images/off.png)
+
+![On Screenshot](./images/on.png)
+
+![Custom Off Screenshot](./images/customoff.png)
+
+![Custom On Screenshot](./images/customOn.png)
 
 # Basic Usage
 
