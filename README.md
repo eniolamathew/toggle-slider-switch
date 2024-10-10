@@ -48,7 +48,8 @@ const BasicExample: React.FC = () => {
       onChange={handleChange}
       onColor="#22c55e"
       offColor="#d1d5db"
-      handleDiameter={28}
+      checkedIcon={true}
+      uncheckedIcon={true}
       height={28}
       width={70}
     />
@@ -71,6 +72,7 @@ import React from "react";
 import ReactToggleSliderSwitch from "react-toggle-slider-switch";
 
 const LabelExample: React.FC = () => {
+  const [checked, setChecked] = useState<boolean>(false);
 
   const handleChange = (newChecked: boolean): void => {
     setChecked(newChecked);
@@ -83,7 +85,8 @@ const LabelExample: React.FC = () => {
       onChange={handleChange}
       onColor="#22c55e"
       offColor="#d1d5db"
-      handleDiameter={28}
+      checkedIcon={true}
+      uncheckedIcon={true}
       height={28}
       width={70}
     />
@@ -106,7 +109,7 @@ import React from "react";
 import ReactToggleSliderSwitch from "react-toggle-slider-switch";
 
 const CustomExample: React.FC = () => {
-  const [checked, setChecked] = useState<boolean>(initialChecked);
+  const [checked, setChecked] = useState<boolean>(false);
 
   const handleChange = (newChecked: boolean): void => {
     setChecked(newChecked);
@@ -115,13 +118,14 @@ const CustomExample: React.FC = () => {
   return (
     <ReactToggleSliderSwitch
       label="Custom Label"
-      checked={isChecked}
+      checked={checked}
       onChange={handleChange}
       onColor="#0f0"
       offColor="#f00"
-      handleDiameter={28}
       height={28}
       width={70}
+      checkedIcon={false}
+      uncheckedIcon={false}
       switchBgClassName="custom-bg-class"
       switchHandleClassName="custom-handle-class"
       checkedIconStyle={{ color: "blue" }}
