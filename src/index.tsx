@@ -72,8 +72,8 @@ const ReactToggleSliderSwitch: React.FC<ReactToggleSliderSwitchProps> = ({
 }) => {
   // Derived positions
   const $handleWidth = Math.max(Math.min(handleWidth, 35), height - 4);
-  const $handleDiameter = handleDiameter || height - 4;
-  const $checkedPos = Math.max(width - $handleWidth - 2);
+  const $handleDiameter = handleDiameter !== undefined ? Math.min(handleDiameter, height - 4) : height - 4;
+  const $checkedPos = Math.max(width - $handleWidth - 2)
   const $uncheckedPos = 2;
 
   // State
