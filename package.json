@@ -4,27 +4,26 @@
   "description": "A customizable React toggle slider switch component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
-  "keywords": [                          
+  "types": "dist/src/index.d.ts",
+  "keywords": [
     "react",
     "toggle",
     "switch",
     "slider",
     "component"
   ],
-  "repository": {                         
+  "repository": {
     "type": "git",
     "url": "https://github.com/eniolamathew/toggle-slider-switch.git"
   },
-  "author": "Eniola Mathew Ogundipe",                 
-  "license": "MIT",                       
-  "files": [                              
+  "author": "Eniola Mathew Ogundipe",
+  "license": "MIT",
+  "files": [
     "dist",
     "README.md"
   ],
   "scripts": {
     "build": "rollup -c",
-    "postbuild": "cpx 'dist/src/**/*.d.ts' dist/ && rm -rf dist/src",
     "test": "jest",
     "test:watch": "jest --watch",
     "clean": "rimraf dist",
@@ -34,8 +33,8 @@
     "prop-types": "^15.8.1"
   },
   "peerDependencies": {
-      "react": "^16.0.0 || ^17.0.0 || ^18.0.0",
-      "react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0"
+    "react": "^16.0.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.7",
@@ -54,7 +53,7 @@
     "cpx": "^1.5.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "rimraf": "^5.0.0",
+    "rimraf": "^5.0.10",
     "rollup": "^2.79.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",

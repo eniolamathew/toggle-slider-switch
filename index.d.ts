@@ -233,8 +233,6 @@ type excludedHTMLInputProps =
 
 type allowedHTMLinputProps = Omit<htmlInputProps, excludedHTMLInputProps>;
 
-declare class ReactToggleSliderSwitch extends React.Component<
-ReactToggleSliderSwitchProps & allowedHTMLinputProps
-> {}
+declare const ReactToggleSliderSwitch: React.FC<  ReactToggleSliderSwitchProps & allowedHTMLinputProps>;
 
 export default ReactToggleSliderSwitch;
