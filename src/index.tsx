@@ -336,29 +336,37 @@ const ReactToggleSliderSwitch: React.FC<ReactToggleSliderSwitchProps> = ({
   return (
     <div className={className} style={rootStyle}>
       {labelPosition === "before" && label && (
-        <span style={{ marginRight: "10px", ...labelStyle }}> {label} </span>
+        <span style={{ display: "contents", ...labelStyle }}> {label} </span>
       )}
-      <div
-        className={`toggle-switch-bg ${switchBgClassName}`}
-        style={backgroundStyle}
-        onClick={disabled ? undefined : handleClick}
-        onMouseDown={(e) => e.preventDefault()}
-      >
-        { checked && checkedIcon && <div className={checkedIconClassName} style={mergedCheckedIconStyle}>{ typeof(checkedIcon) === "boolean" ? defaultCheckedIcon : checkedIcon }</div> }
-        { !checked && uncheckedIcon && <div className={uncheckedIconClassName} style={mergedUncheckedIconStyle}>{ typeof(uncheckedIcon) === "boolean" ? defaultUncheckedIcon : uncheckedIcon }</div> }
-      </div>
-      <div
-        className={`toggle-switch-handle ${switchHandleClassName}`}
-        style={handleStyle}
-        onClick={(e) => e.preventDefault()}
-        onMouseDown={disabled ? undefined : handleMouseDown}
-        onTouchStart={disabled ? undefined : handleTouchStart}
-        onTouchMove={disabled ? undefined : handleTouchMove}
-        onTouchEnd={disabled ? undefined : handleTouchEnd}
-        onTouchCancel={disabled ? undefined : handleUnsetHasOutline}
-      >
-        {uncheckedHandleIcon && ( <div style={uncheckedHandleIconStyle}>{uncheckedHandleIcon}</div> )}
-        {checkedHandleIcon && ( <div style={checkedHandleIconStyle}>{checkedHandleIcon}</div> )}
+      <div 
+        className={'toggle-switch-wrapper'} 
+        style={{position:'relative',
+          width: width,
+          marginRight: labelPosition === "after" ? "10px" :"0px",
+          marginLeft: labelPosition === "before" ? "10px" :"0px",
+        }}>
+        <div
+          className={`toggle-switch-bg ${switchBgClassName}`}
+          style={backgroundStyle}
+          onClick={disabled ? undefined : handleClick}
+          onMouseDown={(e) => e.preventDefault()}
+        >
+          { checked && checkedIcon && <div className={checkedIconClassName} style={mergedCheckedIconStyle}>{ typeof(checkedIcon) === "boolean" ? defaultCheckedIcon : checkedIcon }</div> }
+          { !checked && uncheckedIcon && <div className={uncheckedIconClassName} style={mergedUncheckedIconStyle}>{ typeof(uncheckedIcon) === "boolean" ? defaultUncheckedIcon : uncheckedIcon }</div> }
+        </div>
+        <div
+          className={`toggle-switch-handle ${switchHandleClassName}`}
+          style={handleStyle}
+          onClick={(e) => e.preventDefault()}
+          onMouseDown={disabled ? undefined : handleMouseDown}
+          onTouchStart={disabled ? undefined : handleTouchStart}
+          onTouchMove={disabled ? undefined : handleTouchMove}
+          onTouchEnd={disabled ? undefined : handleTouchEnd}
+          onTouchCancel={disabled ? undefined : handleUnsetHasOutline}
+        >
+          {uncheckedHandleIcon && ( <div style={uncheckedHandleIconStyle}>{uncheckedHandleIcon}</div> )}
+          {checkedHandleIcon && ( <div style={checkedHandleIconStyle}>{checkedHandleIcon}</div> )}
+        </div>
       </div>
       <input
         type="checkbox"
@@ -375,7 +383,7 @@ const ReactToggleSliderSwitch: React.FC<ReactToggleSliderSwitchProps> = ({
         onChange={handleInputChange}
       />
       {labelPosition === "after" && label && (
-        <span style={{ marginLeft: "10px", ...labelStyle }}> {label} </span>
+        <span style={{ display: "contents", ...labelStyle }}> {label} </span>
       )}
     </div>
   );
