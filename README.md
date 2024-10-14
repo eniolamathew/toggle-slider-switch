@@ -128,8 +128,6 @@ const CustomExample: React.FC = () => {
       uncheckedIcon={false}
       switchBgClassName="custom-bg-class"
       switchHandleClassName="custom-handle-class"
-      checkedIconStyle={{ color: "blue" }}
-      uncheckedIconStyle={{ color: "red" }}
       labelStyle={{ fontWeight: "bold", fontSize: "14px" }}
     />
   );
