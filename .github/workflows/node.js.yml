@@ -1,0 +1,42 @@
+# This workflow installs node dependencies, caches/restores them, builds the code, and runs tests across different versions of Node.js.
+# For more information, see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    # Checkout the code
+    - uses: actions/checkout@v4
+
+    # Setup Node.js
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'  # Enables caching for npm dependencies
+
+    # Install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # Build the project (optional, remove if not needed)
+    - name: Build
+      run: npm run build
+
+    # Run tests
+    - name: Run tests
+      run: npm test
